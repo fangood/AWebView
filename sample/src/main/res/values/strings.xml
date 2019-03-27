@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AWebView</string>
+    <string name="title_open_error">无法打开网页</string>
+    <string name="prompt_refresh">请连接网络后，点击空白处刷新</string>
+</resources>
