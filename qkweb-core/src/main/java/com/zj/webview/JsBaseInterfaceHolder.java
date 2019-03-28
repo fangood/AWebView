@@ -21,7 +21,7 @@ public abstract class JsBaseInterfaceHolder implements JsInterfaceHolder {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1){
             return true;
         }
-        if (QKWebConfig.WEBVIEW_TYPE == QKWebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE){
+        if (WebConfig.WEBVIEW_TYPE == WebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE){
             return true;
         }
         boolean tag = false;
@@ -51,7 +51,7 @@ public abstract class JsBaseInterfaceHolder implements JsInterfaceHolder {
 
     protected boolean checkSecurity() {
         return mSecurityType != QKWeb.SecurityType.STRICT_CHECK
-                ? true : QKWebConfig.WEBVIEW_TYPE == QKWebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE
+                ? true : WebConfig.WEBVIEW_TYPE == WebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE
                 ? true : Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR1;
     }
 

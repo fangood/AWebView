@@ -378,7 +378,7 @@ public final class QKWeb {
 	}
 
 	private QKWeb ready() {
-		QKWebConfig.initCookiesManager(mActivity.getApplicationContext());
+		WebConfig.initCookiesManager(mActivity.getApplicationContext());
 		IAgentWebSettings mAgentWebSettings = this.mAgentWebSettings;
 		if (mAgentWebSettings == null) {
 			this.mAgentWebSettings = mAgentWebSettings = AgentWebSettingsImpl.getInstance();

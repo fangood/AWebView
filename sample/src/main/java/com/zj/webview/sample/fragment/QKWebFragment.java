@@ -28,7 +28,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.zj.webview.AbsAgentWebSettings;
 import com.zj.webview.QKWeb;
-import com.zj.webview.QKWebConfig;
+import com.zj.webview.WebConfig;
 import com.zj.webview.BaseWebChromeClient;
 import com.zj.webview.BaseWebViewClient;
 import com.zj.webview.DefaultWebClient;
@@ -121,7 +121,7 @@ public class QKWebFragment extends Fragment implements FragmentKeyDown {
                 .go(getUrl()); //WebView载入该url地址的页面并显示。
 
 
-        QKWebConfig.debug();
+        WebConfig.debug();
 
         initView(view);
 
@@ -565,7 +565,7 @@ public class QKWebFragment extends Fragment implements FragmentKeyDown {
             this.mAgentWeb.clearWebCache();
             Toast.makeText(getActivity(), "已清理缓存", Toast.LENGTH_SHORT).show();
             //清空所有 QKWeb 硬盘缓存，包括 WebView 的缓存 , QKWeb 下载的图片 ，视频 ，apk 等文件。
-//            QKWebConfig.clearDiskCache(this.getContext());
+//            WebConfig.clearDiskCache(this.getContext());
         }
 
     }

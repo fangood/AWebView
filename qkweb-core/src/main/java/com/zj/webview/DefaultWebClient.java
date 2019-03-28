@@ -408,7 +408,7 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
 			}
 			return isIntercepted;
 		} catch (Throwable ignore) {
-			if (QKWebConfig.DEBUG) {
+			if (WebConfig.DEBUG) {
 				ignore.printStackTrace();
 			}
 		}
@@ -430,7 +430,7 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
 				intent.setData(Uri.parse(url));
 				mActivity.startActivity(intent);
 			} catch (ActivityNotFoundException ignored) {
-				if (QKWebConfig.DEBUG) {
+				if (WebConfig.DEBUG) {
 					ignored.printStackTrace();
 				}
 			}

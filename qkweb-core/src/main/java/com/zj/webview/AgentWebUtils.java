@@ -66,8 +66,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.zj.webview.QKWebConfig.AGENTWEB_FILE_PATH;
-import static com.zj.webview.QKWebConfig.FILE_CACHE_PATH;
+import static com.zj.webview.WebConfig.AGENTWEB_FILE_PATH;
+import static com.zj.webview.WebConfig.FILE_CACHE_PATH;
 
 
 public class AgentWebUtils {
@@ -419,18 +419,18 @@ public class AgentWebUtils {
 
         try {
 
-            QKWebConfig.removeAllCookies(null);
+            WebConfig.removeAllCookies(null);
             webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
             context.deleteDatabase("webviewCache.db");
             context.deleteDatabase("webview.db");
             webView.clearCache(true);
             webView.clearHistory();
             webView.clearFormData();
-            clearCacheFolder(new File(QKWebConfig.getCachePath(context)), 0);
+            clearCacheFolder(new File(WebConfig.getCachePath(context)), 0);
 
         } catch (Exception ignore) {
             //ignore.printStackTrace();
-            if (QKWebConfig.DEBUG) {
+            if (WebConfig.DEBUG) {
                 ignore.printStackTrace();
             }
         }

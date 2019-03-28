@@ -4,7 +4,6 @@ package com.zj.webview;
 import android.os.Build;
 import android.view.View;
 
-import com.zj.webview.WebListenerManager;
 import com.tencent.smtt.sdk.DownloadListener;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
@@ -16,7 +15,7 @@ public abstract class AbsAgentWebSettings implements IAgentWebSettings, WebListe
 	private static final String TAG = AbsAgentWebSettings.class.getSimpleName();
 	public static final String USERAGENT_UC = " UCBrowser/11.6.4.950 ";
 	public static final String USERAGENT_QQ_BROWSER = " MQQBrowser/8.0 ";
-	public static final String USERAGENT_AGENTWEB = QKWebConfig.AGENTWEB_VERSION;
+	public static final String USERAGENT_AGENTWEB = WebConfig.AGENTWEB_VERSION;
 	protected QKWeb mAgentWeb;
 
 
@@ -100,9 +99,9 @@ public abstract class AbsAgentWebSettings implements IAgentWebSettings, WebListe
 		mWebSettings.setMinimumFontSize(12);//设置 WebView 支持的最小字体大小，默认为 8
 		mWebSettings.setGeolocationEnabled(true);
 		//
-		String dir = QKWebConfig.getCachePath(webView.getContext());
+		String dir = WebConfig.getCachePath(webView.getContext());
 
-		LogUtils.i(TAG, "dir:" + dir + "   appcache:" + QKWebConfig.getCachePath(webView.getContext()));
+		LogUtils.i(TAG, "dir:" + dir + "   appcache:" + WebConfig.getCachePath(webView.getContext()));
 		//设置数据库路径  api19 已经废弃,这里只针对 webkit 起作用
 		mWebSettings.setGeolocationDatabasePath(dir);
 		mWebSettings.setDatabasePath(dir);

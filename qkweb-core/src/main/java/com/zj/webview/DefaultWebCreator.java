@@ -167,7 +167,7 @@ public class DefaultWebCreator implements WebCreator {
         mFrameLayout.bindWebView(this.mWebView);
         LogUtils.i(TAG, "  instanceof  AgentWebView:" + (this.mWebView instanceof AgentWebView));
         if (this.mWebView instanceof AgentWebView) {
-            QKWebConfig.WEBVIEW_TYPE = QKWebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE;
+            WebConfig.WEBVIEW_TYPE = WebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE;
         }
         ViewStub mViewStub = new ViewStub(mActivity);
         mViewStub.setId(R.id.mainframe_error_viewsub_id);
@@ -203,7 +203,7 @@ public class DefaultWebCreator implements WebCreator {
             LogUtils.i(TAG, "add webview");
 
         } else {
-            QKWebConfig.WEBVIEW_TYPE = QKWebConfig.WEBVIEW_CUSTOM_TYPE;
+            WebConfig.WEBVIEW_TYPE = WebConfig.WEBVIEW_CUSTOM_TYPE;
         }
         this.mWebView = mWebView;
         return mIWebLayout.getLayout();
@@ -215,13 +215,13 @@ public class DefaultWebCreator implements WebCreator {
         WebView mWebView = null;
         if (this.mWebView != null) {
             mWebView = this.mWebView;
-            QKWebConfig.WEBVIEW_TYPE = QKWebConfig.WEBVIEW_CUSTOM_TYPE;
-        } else if (QKWebConfig.IS_KITKAT_OR_BELOW_KITKAT) {
+            WebConfig.WEBVIEW_TYPE = WebConfig.WEBVIEW_CUSTOM_TYPE;
+        } else if (WebConfig.IS_KITKAT_OR_BELOW_KITKAT) {
             mWebView = new AgentWebView(mActivity);
-            QKWebConfig.WEBVIEW_TYPE = QKWebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE;
+            WebConfig.WEBVIEW_TYPE = WebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE;
         } else {
             mWebView = new WebView(mActivity);
-            QKWebConfig.WEBVIEW_TYPE = QKWebConfig.WEBVIEW_DEFAULT_TYPE;
+            WebConfig.WEBVIEW_TYPE = WebConfig.WEBVIEW_DEFAULT_TYPE;
         }
 
         return mWebView;

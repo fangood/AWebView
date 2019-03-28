@@ -15,7 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.zj.webview.QKWebConfig;
+import com.zj.webview.WebConfig;
 import com.zj.webview.sample.R;
 import com.zj.webview.sample.common.GuideItemEntity;
 
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW = FLAG_GUIDE_DICTIONARY_LINKAGE_WITH_TOOLBAR << 1;
     public static final int FLAG_GUIDE_DICTIONARY_JS_JAVA_COMUNICATION_UPLOAD_FILE = FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW << 1;
     public static final GuideItemEntity[] datas = new GuideItemEntity[]{
-            new GuideItemEntity("Activity 使用 QKWeb", FLAG_GUIDE_DICTIONARY_USE_IN_ACTIVITY),
-            new GuideItemEntity("Fragment 使用 QKWeb ", FLAG_GUIDE_DICTIONARY_USE_IN_FRAGMENT),
+            new GuideItemEntity("Activity 使用 AWeb", FLAG_GUIDE_DICTIONARY_USE_IN_ACTIVITY),
+            new GuideItemEntity("Fragment 使用 AWeb ", FLAG_GUIDE_DICTIONARY_USE_IN_FRAGMENT),
             new GuideItemEntity("文件下载", FLAG_GUIDE_DICTIONARY_FILE_DOWNLOAD),
             new GuideItemEntity("input标签文件上传", FLAG_GUIDE_DICTIONARY_INPUT_TAG_PROBLEM),
             new GuideItemEntity("Js 通信文件上传,兼用Android 4.4Kitkat", FLAG_GUIDE_DICTIONARY_JS_JAVA_COMUNICATION_UPLOAD_FILE),
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         mToolbar.setTitleTextColor(Color.WHITE);
         mToolbar.setTitle("");
         mTitleTextView = (TextView) this.findViewById(R.id.toolbar_title);
-        mTitleTextView.setText("QKWebView 使用指南");
+        mTitleTextView.setText("AWebView 使用指南");
         this.setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             // Enable the Up button
@@ -111,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        if (QKWebConfig.DEBUG) {
+        if (WebConfig.DEBUG) {
             Log.i("Info", "Debug 模式");
         } else {
             Log.i("Info", "release 模式");
         }
 
-        QKWebConfig.debug();
+        WebConfig.debug();
     }
 
 

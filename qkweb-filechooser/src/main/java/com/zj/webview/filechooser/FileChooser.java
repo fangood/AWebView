@@ -18,7 +18,7 @@ import android.util.Base64;
 import com.zj.webview.AbsAgentWebUIController;
 import com.zj.webview.Action;
 import com.zj.webview.ActionActivity;
-import com.zj.webview.QKWebConfig;
+import com.zj.webview.WebConfig;
 import com.zj.webview.AgentWebPermissions;
 import com.zj.webview.AgentWebUtils;
 import com.zj.webview.BaseWebChromeClient;
@@ -510,9 +510,9 @@ public class FileChooser {
 			sum += mFile.length();
 		}
 
-		if (sum > QKWebConfig.MAX_FILE_LENGTH) {
+		if (sum > WebConfig.MAX_FILE_LENGTH) {
 			if (mAgentWebUIController.get() != null) {
-				mAgentWebUIController.get().onShowMessage(mActivity.getString(R.string.agentweb_max_file_length_limit, (QKWebConfig.MAX_FILE_LENGTH / 1024 / 1024) + ""), TAG.concat("|convertFileAndCallback"));
+				mAgentWebUIController.get().onShowMessage(mActivity.getString(R.string.agentweb_max_file_length_limit, (WebConfig.MAX_FILE_LENGTH / 1024 / 1024) + ""), TAG.concat("|convertFileAndCallback"));
 			}
 			mJsChannelCallback.call(null);
 			return;

@@ -29,7 +29,7 @@ public class WebSecurityLogicImpl implements WebSecurityCheckLogic {
     public void dealJsInterface(ArrayMap<String, Object> objects,QKWeb.SecurityType securityType) {
 
         if (securityType== QKWeb.SecurityType.STRICT_CHECK
-                && QKWebConfig.WEBVIEW_TYPE!= QKWebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE
+                && WebConfig.WEBVIEW_TYPE!= WebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE
                 &&Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
             LogUtils.e(TAG,"Give up all inject objects");
             objects.clear();

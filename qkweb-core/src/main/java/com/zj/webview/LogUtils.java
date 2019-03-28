@@ -7,7 +7,7 @@ public class LogUtils {
     private static final String PREFIX = " qkweb - ";
 
     public static boolean isDebug() {
-        return QKWebConfig.DEBUG;
+        return WebConfig.DEBUG;
     }
 
     public static void i(String tag, String message) {

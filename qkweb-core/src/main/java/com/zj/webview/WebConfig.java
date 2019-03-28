@@ -15,7 +15,7 @@ import java.io.File;
 
 import static com.zj.webview.AgentWebUtils.getAgentWebFilePath;
 
-public class QKWebConfig {
+public class WebConfig {
 
 
 	static final String FILE_CACHE_PATH = "agentweb-cache";
@@ -46,7 +46,7 @@ public class QKWebConfig {
 	public static final int WEBVIEW_CUSTOM_TYPE = 3;
 	static int WEBVIEW_TYPE = WEBVIEW_DEFAULT_TYPE;
 	private static volatile boolean IS_INITIALIZED = false;
-	private static final String TAG = QKWebConfig.class.getSimpleName();
+	private static final String TAG = WebConfig.class.getSimpleName();
 	/**
 	 * QKWeb 的版本
 	 */

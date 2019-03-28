@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.SparseArray;
 
-import com.zj.webview.QKWebConfig;
+import com.zj.webview.WebConfig;
 import com.zj.webview.AgentWebUtils;
 import com.zj.webview.LogUtils;
 
@@ -278,14 +278,14 @@ public class Downloader extends AsyncTask<Void, Integer, Integer> implements Age
 			return;
 		}
 		LogUtils.i(TAG, "save etag:" + etag);
-		SharedPreferences mSharedPreferences = mDownloadTask.getContext().getSharedPreferences(QKWebConfig.AGENTWEB_NAME, Context.MODE_PRIVATE);
+		SharedPreferences mSharedPreferences = mDownloadTask.getContext().getSharedPreferences(WebConfig.AGENTWEB_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = mSharedPreferences.edit();
 		editor.putString(mDownloadTask.getFile().getName(), etag);
 		editor.apply();
 	}
 
 	private String getEtag() {
-		SharedPreferences mSharedPreferences = mDownloadTask.getContext().getSharedPreferences(QKWebConfig.AGENTWEB_NAME, Context.MODE_PRIVATE);
+		SharedPreferences mSharedPreferences = mDownloadTask.getContext().getSharedPreferences(WebConfig.AGENTWEB_NAME, Context.MODE_PRIVATE);
 		String mEtag = mSharedPreferences.getString(mDownloadTask.getFile().getName(), "-1");
 		if (!TextUtils.isEmpty(mEtag) && !"-1".equals(mEtag)) {
 			return mEtag;
@@ -303,7 +303,7 @@ public class Downloader extends AsyncTask<Void, Integer, Integer> implements Age
 		mHttpURLConnection.setRequestProperty("Accept", "application/*");
 		mHttpURLConnection.setRequestProperty("Accept-Encoding", "identity");
 		mHttpURLConnection.setRequestProperty("Connection", "close");
-		mHttpURLConnection.setRequestProperty("Cookie", QKWebConfig.getCookiesByUrl(url.toString()));
+		mHttpURLConnection.setRequestProperty("Cookie", WebConfig.getCookiesByUrl(url.toString()));
 		Map<String, String> mHeaders = null;
 		if (null != (mHeaders = mDownloadTask.getExtraServiceImpl().getHeaders()) &&
 				!mHeaders.isEmpty()) {

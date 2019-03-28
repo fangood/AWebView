@@ -9,7 +9,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 
@@ -21,7 +20,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
-import static com.zj.webview.QKWebConfig.AGENTWEB_VERSION;
+import static com.zj.webview.WebConfig.AGENTWEB_VERSION;
 
 
 public class DownloadNotifier {
